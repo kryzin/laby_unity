@@ -4,37 +4,36 @@ using UnityEngine;
 
 public class Zadanie3 : MonoBehaviour
 {
-    public float speed = 1.0f;
-    Rigidbody rb;
-    // Start is called before the first frame update
+    public float speed = 3f;
+    private Vector3[] edges;
+    private int current_edge = 0;
+    private int next_edge = 1;
+
     void Start()
     {
-        transform.position = new Vector3(0.0f, 0.0f, 0.0f);
-        rb = GetComponent<Rigidbody>();
-        rb.AddForce(speed, 0, 0, ForceMode.Impulse);
-        StartTurn();
+        edges = new Vector3[]
+        {
+            new Vector3 (0, 0, 0),
+            new Vector3 (10, 0, 0),
+            new Vector3 (10, 0, 10),
+            new Vector3 (0, 0, 10)
+        };
     }
 
-    // Update is called once per frame
     void Update()
     {
-        float a = 0;
-        rb = GetComponent<Rigidbody>();
-        if(rb.position.x >= 10 && a==0)
+        float movement = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, edges[current_edge], movement);
+
+        if (transform.position == edges[current_edge])
         {
-            a = 1;
-            StartTurn();
+            current_edge = (current_edge + 1) % edges.Length;
+            Vector3 direction = edges[next_edge] - transform.position;
+            Quaternion rotation = Quaternion.LookRotation(direction);
+            // I have no idea how to get rid of an initial rotation at first move, so I just added -90 degrees :)
+            // pretty sure it's just my wrong understanding of what would be the looking direction for an edge
+            transform.rotation = rotation * Quaternion.Euler(0, -90, 0);
+            next_edge = (next_edge + 1) % edges.Length;
         }
-    }
-    // D -- C
-    // |    |
-    // A -- B
-    void StartTurn()
-    {
-        // start at 10/0/0, go to 10/0/10
-        // transform.position = new Vector3(10.0f, 0.0f, 0.0f);
-        transform.Rotate(0, -90, 0, Space.Self);
-        rb = GetComponent<Rigidbody>();
-        rb.AddForce(speed, 0, 0, ForceMode.Impulse);
     }
 }
