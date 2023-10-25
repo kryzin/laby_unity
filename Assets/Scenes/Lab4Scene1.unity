@@ -430,6 +430,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0.3
   iloscObiektow: 10
+  materials:
+  - {fileID: 2100000, guid: 4356019879464a3418c48d3742ecb871, type: 2}
+  - {fileID: 2100000, guid: edfe5ad364eef9d4699e5b53137a40a2, type: 2}
+  - {fileID: 2100000, guid: 84c15d431328fe0419fbe0b73b22a053, type: 2}
+  - {fileID: 2100000, guid: 294b5924bad4edf43b2c7b55aa52afea, type: 2}
+  - {fileID: 2100000, guid: 18aa9bca1d28ddd479a950a69d9f0022, type: 2}
   block: {fileID: 6872781565709977035, guid: b695269eaa583504689be5f664e32f58, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

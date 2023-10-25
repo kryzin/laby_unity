@@ -10,6 +10,7 @@ public class RandomCubesGenerator : MonoBehaviour
     public float delay = 3.0f;
     int objectCounter = 0;
     public int iloscObiektow = 10;
+    public Material[] materials;
     // obiekt do generowania
     public GameObject block;
 
@@ -47,7 +48,9 @@ public class RandomCubesGenerator : MonoBehaviour
         Debug.Log("wywo³ano coroutine");
         foreach (Vector3 pos in positions)
         {
-            Instantiate(this.block, this.positions.ElementAt(this.objectCounter++), Quaternion.identity);
+            GameObject obj = Instantiate(this.block, this.positions.ElementAt(this.objectCounter++), Quaternion.identity);
+            int randomMaterial = UnityEngine.Random.Range(0, materials.Length);
+            obj.GetComponent<Renderer>().material = materials[randomMaterial];
             yield return new WaitForSeconds(this.delay);
         }
         // zatrzymujemy coroutine
