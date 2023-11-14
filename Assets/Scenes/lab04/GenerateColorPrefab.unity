@@ -425,18 +425,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1630940857}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a53a07c8012db3c45aa9599a1f68c1fb, type: 3}
+  m_Script: {fileID: 11500000, guid: e1b7876451dcdc04aa1df00676c314bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.3
+  delay: 3
   iloscObiektow: 10
   materials:
-  - {fileID: 2100000, guid: 4356019879464a3418c48d3742ecb871, type: 2}
-  - {fileID: 2100000, guid: edfe5ad364eef9d4699e5b53137a40a2, type: 2}
-  - {fileID: 2100000, guid: 84c15d431328fe0419fbe0b73b22a053, type: 2}
-  - {fileID: 2100000, guid: 294b5924bad4edf43b2c7b55aa52afea, type: 2}
-  - {fileID: 2100000, guid: 18aa9bca1d28ddd479a950a69d9f0022, type: 2}
-  block: {fileID: 6872781565709977035, guid: b695269eaa583504689be5f664e32f58, type: 3}
+  - {fileID: 2100000, guid: 557979fb02fc48d4583e6be6e7c20a35, type: 2}
+  - {fileID: 2100000, guid: 861fcc01aaae53547b1da7675805d6dd, type: 2}
+  - {fileID: 2100000, guid: 5e082ccac6349e84b88a047634d2dde2, type: 2}
+  - {fileID: 2100000, guid: 4a075a45fc0efcf4c90e2cb5d50a29b0, type: 2}
+  - {fileID: 2100000, guid: 576501516cae4654885d79006b09b0df, type: 2}
+  block: {fileID: 6872781565709977035, guid: 366ab51c50ade024fa97c80f3f8328cc, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
