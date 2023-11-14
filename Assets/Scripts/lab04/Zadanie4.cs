@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveWithCharacterController : MonoBehaviour
+public class MoveCharacterController : MonoBehaviour
 {
     private CharacterController controller;
     private Vector3 playerVelocity;
@@ -23,7 +23,7 @@ public class MoveWithCharacterController : MonoBehaviour
         float moveZ = Input.GetAxis("Vertical");
 
         groundedPlayer = controller.isGrounded;
-        Debug.Log("grounded? " + groundedPlayer);
+        //Debug.Log("grounded? " + groundedPlayer);
         // Debug logs true, but sometimes still unable to jump ??
 
         if (groundedPlayer && playerVelocity.y < 0)
@@ -35,7 +35,7 @@ public class MoveWithCharacterController : MonoBehaviour
         controller.Move(move * Time.deltaTime * playerSpeed);
 
 
-        if (Input.GetButtonDown("Jump") && groundedPlayer)
+        if (Input.GetButton("Jump") && groundedPlayer)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
         }
