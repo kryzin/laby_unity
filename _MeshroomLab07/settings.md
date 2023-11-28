@@ -1,2 +1,0 @@
-# Model: pluszak ośmiornica
-
